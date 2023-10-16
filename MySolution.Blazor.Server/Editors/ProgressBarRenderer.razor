@@ -8,6 +8,6 @@
 
 @code {
     [Parameter]
-    public ProgressBarModel ComponentModel { get; set; }
-    public static RenderFragment Create(ProgressBarModel componentModel) =>@<ProgressBarRenderer ComponentModel=@componentModel />;
+    public InputModel ComponentModel { get; set; }
+    public static RenderFragment Create(InputModel componentModel) =>@<ProgressBarRenderer ComponentModel=@componentModel />;
 }

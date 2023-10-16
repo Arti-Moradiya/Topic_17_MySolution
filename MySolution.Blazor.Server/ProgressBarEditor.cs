@@ -11,11 +11,11 @@ namespace MySolution.Blazor.Server
     public class ProgressBarEditor : BlazorPropertyEditorBase
     {
         public ProgressBarEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model) { }
-        protected override IComponentAdapter CreateComponentAdapter() => new ProgressBarAdapter(new ProgressBarModel());
+        protected override IComponentAdapter CreateComponentAdapter() => new InputAdapter(new InputModel());
         protected override RenderFragment CreateViewComponentCore(object dataContext)
         {
             var taskObject = (MySolution.Module.BusinessObjects.DemoTask)dataContext;
-            ProgressBarModel componentModel = new ProgressBarModel() { Value = taskObject.Progress };
+            InputModel componentModel = new InputModel() { Value = taskObject.DateCompleted };
             return ProgressBarRenderer.Create(componentModel);
         }
     }

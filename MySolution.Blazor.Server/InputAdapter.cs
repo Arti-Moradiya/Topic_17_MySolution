@@ -5,8 +5,7 @@ using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Utils;
 using Microsoft.AspNetCore.Components;
 using MySolution.Blazor.Server;
-using System;
-// ...
+
 public class InputAdapter : ComponentAdapterBase, IComponentModelHolder
 {
     public InputAdapter(InputModel componentModel)
