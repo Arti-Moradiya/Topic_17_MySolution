@@ -15,7 +15,7 @@ namespace MySolution.Blazor.Server
         protected override RenderFragment CreateViewComponentCore(object dataContext)
         {
             var taskObject = (MySolution.Module.BusinessObjects.DemoTask)dataContext;
-            InputModel componentModel = new InputModel() { Value = taskObject.DateCompleted };
+            InputModel componentModel = new InputModel() { Value = taskObject.Progress };
             return ProgressBarRenderer.Create(componentModel);
         }
     }
