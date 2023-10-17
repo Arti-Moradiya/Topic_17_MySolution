@@ -3,9 +3,9 @@ using DevExpress.ExpressApp.Blazor.Components.Models;
 // ...
 public class InputModel : ComponentModelBase
 {
-    public string Value
+    public int Value
     {
-        get => GetPropertyValue<string>();
+        get => GetPropertyValue<int>();
         set => SetPropertyValue(value);
     }
     public bool ReadOnly
@@ -14,7 +14,7 @@ public class InputModel : ComponentModelBase
         set => SetPropertyValue(value);
     }
     // ...
-    public void SetValueFromUI(string value)
+    public void SetValueFromUI(int value)
     {
         SetPropertyValue(value, notify: false, nameof(Value));
         ValueChanged?.Invoke(this, EventArgs.Empty);

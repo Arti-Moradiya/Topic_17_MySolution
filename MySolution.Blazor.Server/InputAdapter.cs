@@ -26,7 +26,7 @@ public class InputAdapter : ComponentAdapterBase, IComponentModelHolder
     }
     public override void SetValue(object value)
     {
-        ComponentModel.Value = (string)value;
+        ComponentModel.Value = (int)value;
     }
     protected override RenderFragment CreateComponent()
     {

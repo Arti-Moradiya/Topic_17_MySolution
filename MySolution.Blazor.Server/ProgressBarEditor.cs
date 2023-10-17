@@ -7,7 +7,7 @@ using MySolution.Blazor.Server.Editors;
 
 namespace MySolution.Blazor.Server
 {
-    [PropertyEditor(typeof(int), "ProgressProperty", false)]
+    [PropertyEditor(typeof(int), false)]
     public class ProgressBarEditor : BlazorPropertyEditorBase
     {
         public ProgressBarEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model) { }

@@ -19,6 +19,7 @@ namespace MySolution.Module.BusinessObjects
                 return GetCollection<Contact>(nameof(Contacts));
             }
         }
+        int pregress;
         private Priority priority;
         public Priority Priority
         {
@@ -28,6 +29,14 @@ namespace MySolution.Module.BusinessObjects
                 SetPropertyValue(nameof(Priority), ref priority, value);
             }
         }
+
+        
+        public int Progress
+        {
+            get => pregress;
+            set => SetPropertyValue(nameof(Progress), ref pregress, value);
+        }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();

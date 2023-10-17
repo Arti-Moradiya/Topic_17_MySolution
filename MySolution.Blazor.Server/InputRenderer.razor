@@ -1,11 +1,25 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
-<input value=@ComponentModel.Value
+@* <input value=@ComponentModel.Value
 @onchange=@(e => ComponentModel.SetValueFromUI((string)e.Value))
        readonly=@ComponentModel.ReadOnly
-@attributes=@ComponentModel.Attributes />
+@attributes=@ComponentModel.Attributes /> *@
+<h3>Custom Property Editor</h3>
+<DxSpinEdit Value="@ComponentModel.Value" ValueChanged="@((int val) => OnChanged(val))"></DxSpinEdit>
 @code {
     [Parameter]
     public InputModel ComponentModel { get; set; }
     public static RenderFragment Create(InputModel componentModel) =>
         @<InputRenderer ComponentModel=@componentModel />;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        var val = ComponentModel.Value;
+    }
+
+    private void OnChanged(int newvalue)
+    {
+        ComponentModel.SetValueFromUI(newvalue);
+    }
+
 }
